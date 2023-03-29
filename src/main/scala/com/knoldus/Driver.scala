@@ -3,6 +3,7 @@ package com.knoldus
 object Driver extends App {
   val listOfSome = new ListOfSomeOfNumbers
   val list = List(Some(9), Some(2), Some(3), Some(1), Some(11))
+  val emptyList = List().empty
   val addition = "addition"
   val multiplication = "multiplication"
   val absSubtraction = "absolute-subtraction"
@@ -14,18 +15,15 @@ object Driver extends App {
   val absSubtractionResult = listOfSome.extractValuesFromList(list, absSubtraction)
   val normalSubtractionResult = listOfSome.extractValuesFromList(list, normalSubtraction)
 
-  val emptyList = List().empty
-
   try {
-    listOfSome.extractValuesFromList(emptyList, addition)
     listOfSome.extractValuesFromList(list, division)
   } catch {
-    case exception: NullPointerException => exception.getMessage
-    case e: IllegalArgumentException => e.getMessage
+    case exception: MatchError => exception.getMessage
   }
 
   println("Sum: " + AdditionResult)
   println("Product: " + multiplecationResult)
   println("Absolute difference: " + absSubtractionResult)
   println("Difference: " + normalSubtractionResult)
+  println("Result of Empty List : "+listOfSome.extractValuesFromList(emptyList, addition))
 }

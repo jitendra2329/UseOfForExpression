@@ -38,15 +38,15 @@ class ListOfSomeOfNumbersTest extends AnyFlatSpec {
     assert(actualResult == expectedResult)
   }
 
-  it should "return an exception - NullPointerException, in case List is empty" in {
+  it should "return 0 in case of empty list" in {
     val list = List().empty
-    an[NullPointerException] should be thrownBy {
-      listOfSome.extractValuesFromList(list, addition)
-    }
+    val actualResult = listOfSome.extractValuesFromList(list, multiplication)
+    val expectedResult = 0
+    assert(actualResult == expectedResult)
   }
 
-  it should "throw an exception - IllegalArgumentException, in case operation is not defined" in {
-    an[IllegalArgumentException] should be thrownBy {
+  it should "throw an exception - MatchError, in case operation is not defined" in {
+    an[MatchError] should be thrownBy {
       val list = List(Some(9), Some(2), Some(5), Some(7), Some(1))
       val division = "division"
       listOfSome.extractValuesFromList(list, division)
