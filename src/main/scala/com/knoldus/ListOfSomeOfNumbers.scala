@@ -18,7 +18,7 @@ class ListOfSomeOfNumbers {
     println(list.headOption.getOrElse(0))
     operationOfList match {
       case "addition" => list.sum
-      case "multiplication" => list.foldLeft(1)(_ * _) // Alternate of this operation is =>  result.product
+      case "multiplication" => list.foldLeft(1)(_ * _) // Alternate of this operation is =>  list.product
       case "absolute-subtraction" => list.foldLeft(list.headOption.getOrElse(0))(_ - _).abs
       case "normal-subtraction" => list.foldLeft(list.headOption.getOrElse(0))(_ - _)
       case _ => throw new IllegalArgumentException
