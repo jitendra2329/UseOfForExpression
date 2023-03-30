@@ -20,14 +20,14 @@ class ListOfSomeOfNumbersTest extends AnyFlatSpec {
   it should "return absolute difference of values of list" in {
     val list = List(Some(9), Some(2), Some(3), Some(1), Some(11))
     val actualResult = listOfSome.extractValuesFromList(list, absSubtraction)
-    val expectedResult = 17
+    val expectedResult = 8
     assert(actualResult == expectedResult)
   }
 
   it should "return difference of values of list" in {
     val list = List(Some(9), Some(2), Some(3), Some(1), Some(11))
     val actualResult = listOfSome.extractValuesFromList(list, normalSubtraction)
-    val expectedResult = -17
+    val expectedResult = -8
     assert(actualResult == expectedResult)
   }
 
