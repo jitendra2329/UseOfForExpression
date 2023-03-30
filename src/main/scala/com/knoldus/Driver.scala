@@ -10,7 +10,7 @@ object Driver extends App {
   val normalSubtraction = "normal-subtraction"
   val division = "division"
 
-  val AdditionResult = listOfSome.extractValuesFromList(list, addition)
+  val additionResult = listOfSome.extractValuesFromList(list, addition)
   val multiplecationResult = listOfSome.extractValuesFromList(list, multiplication)
   val absSubtractionResult = listOfSome.extractValuesFromList(list, absSubtraction)
   val normalSubtractionResult = listOfSome.extractValuesFromList(list, normalSubtraction)
@@ -21,7 +21,7 @@ object Driver extends App {
     case exception: MatchError => exception.getMessage
   }
 
-  println("Sum: " + AdditionResult)
+  println("Sum: " + additionResult)
   println("Product: " + multiplecationResult)
   println("Absolute difference: " + absSubtractionResult)
   println("Difference: " + normalSubtractionResult)
